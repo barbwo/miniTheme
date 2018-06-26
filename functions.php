@@ -36,3 +36,17 @@
 				</div>
 		<?php endif;
 	}
+	
+	function sidebar_and_widget_init() {
+		register_sidebar( array(
+			'name' => __( 'Right Sidebar' ),
+			'id' => 'right-sidebar',
+			'description' => 'The main sidebar appears on the right on each page.',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget' => '</section>',
+			'before_title' => '<h1>',
+			'after_title' => '</h1>',
+    	) );
+		register_widget( 'Favourite_Posts' );
+	}
+	add_action( 'widgets_init', 'sidebar_and_widget_init' );
