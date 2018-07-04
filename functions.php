@@ -13,7 +13,7 @@
 	add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
 	
 	function register_header_menu() {
-  		register_nav_menu('header-menu','Header Menu' );
+		register_nav_menu('header-menu','Header Menu' );
 	}
 	add_action( 'init', 'register_header_menu' );
 	
@@ -46,7 +46,9 @@
 			'after_widget' => '</section>',
 			'before_title' => '<h1>',
 			'after_title' => '</h1>',
-    	) );
+		) );
 		register_widget( 'Favourite_Posts' );
 	}
 	add_action( 'widgets_init', 'sidebar_and_widget_init' );
+
+	add_theme_support( 'post-thumbnails' ); 

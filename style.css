@@ -46,7 +46,7 @@ body {
 	min-height: 100vh;
 	padding: 0 4rem;
 }
-header, footer {
+#site-header, footer {
 	grid-column: span 3;
 }
 main {
@@ -60,26 +60,26 @@ aside {
 footer {
 	margin: auto;
 }
-header, #site-header, #site-navigation {
+#site-header, #site-brand, #site-navigation {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
-header {
+#site-header {
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 }
-#site-header, #site-navigation {
+#site-brand, #site-navigation {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
 }
-#site-header {
+#site-brand {
 	font-size: 2rem;
 	margin: 1em 0;
 }
-#site-brand:hover {
+#site-brand a:hover {
 	border:none;
 	font-size: 2.1rem;
 }
@@ -95,7 +95,7 @@ header {
 article, section {
 	margin-bottom: 1.5rem;
 }
-.entry-title, .widget h1 {
+h1, .widget h1 {
 	font-size: 1.5rem;
 }
 .entry-title, .entry-meta {
@@ -194,12 +194,56 @@ a:hover {
 	color: var(--primary-color);
 	text-decoration: none;
 }
+.entry-content img{
+	height: auto;
+	max-width: 100%;
+}
+#entry-author {
+	align-items: center;
+	border: 1px solid var(--border-color);
+	display: flex;
+	margin: 20px;
+	padding: 20px;
+}
+#entry-author img {
+	margin-right: 20px;
+}
+#entry-author h3, #entry-author p {
+	margin-bottom: 0;
+}
+#entry-categories a {
+	border: 1px solid var(--border-color);
+	color: var(--text-muted-color);
+	font-size: 0.8rem;
+	padding: 3px 3px 2px 3px;
+	text-transform: uppercase;
+}
+#entry-categories a:hover {
+	border-color: var(--primary-color);
+	color: var(--primary-color);
+}
+#archive-header {
+	text-align: center;
+}
+
+#archive-header img {
+	margin-bottom: 20px;
+}
+#archive-counter{
+	margin-top: 20px;
+}
+hr {
+	border: 0;
+	height: 1px;
+	margin: 20px 0;
+	background: var(--border-color);
+}
 @media only screen and (max-width: 48rem) {
 	.container {
 		-ms-grid-rows: fit-content(7rem) auto auto 4rem;
 		    grid-template-rows: fit-content(7rem) auto auto 4rem;
 	}
-	header, #site-navigation {
+	#site-header, #site-navigation {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
 		    -ms-flex-direction: column;
@@ -208,7 +252,7 @@ a:hover {
 	#site-navigation li {
 		margin: 0.5rem 0;
 	}
-	#site-header {
+	#site-brand {
 		-webkit-box-pack: justify;
 		    -ms-flex-pack: justify;
 		        justify-content: space-between;
@@ -232,5 +276,14 @@ a:hover {
 	}
 	.widget ul li::before {
 		content: none;
+	}
+	#entry-author {
+		flex-direction: column;
+	}
+	#entry-author img {
+		margin: 0 0 20px 0;
+	}
+	#entry-author h3 {
+		text-align: center;
 	}
 }

@@ -8,9 +8,9 @@
 	</head>
 	<body>
 		<div class="container">
-			<header>
-				<div id="site-header">
-					<a id="site-brand" href="<?php echo home_url(); ?>">
+			<header id="site-header">
+				<div id="site-brand">
+					<a href="<?php echo home_url(); ?>">
 						<span id="site-logo">
 							<i class="fas fa-laptop"></i>
 						</span>
