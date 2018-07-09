@@ -6,13 +6,27 @@
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</h1>
 				<p class="entry-meta">
-					<?php the_time('d.m.Y'); ?> | <?php comments_number( '0 komentarzy', '1 komentarz', '% komentarzy'); ?>
-					<div id="entry-categories"><?php the_category(' '); ?></div>
-				</p>
+					<?php 
+						if( get_theme_mod( 'post_single_date', true ) ):
+							the_time('d.m.Y');
+						endif;
+						if( get_theme_mod( 'post_single_date', true ) && get_theme_mod( 'post_single_comments_number', true ) ):
+							echo ' | ';
+						endif;
+						if( get_theme_mod( 'post_single_comments_number', true ) ) :
+							comments_number( '0 komentarzy', '1 komentarz', '% komentarzy'); 
+						endif;
+						if( get_theme_mod( 'post_single_category', true ) ):
+					?>
+						<div id="entry-categories"><?php the_category(' '); ?></div>
+					<?php
+						endif; 
+					?>
+					</p>
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div>
-				<?php if(count(get_users(array('role' => 'editor'))) > 1): ?>
+				<?php if( get_theme_mod( 'post_single_author', true ) ): ?>
 					<div id="entry-author">
 						<div><?php echo get_avatar(get_the_author_meta('email'), 80); ?></div>
 						<div>

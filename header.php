@@ -2,8 +2,16 @@
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<title><?php wp_title('|', true, true) . bloginfo( 'name' ); ?></title>
-		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
+		<title>
+			<?php 
+				wp_title('|', true, true);
+				$title = get_bloginfo( 'name' );
+				if( strlen($desc = get_bloginfo('description')) > 0 ):
+					$title .= ' - ' . $desc;
+				endif; 
+				echo $title; 
+			?>
+		</title>
 		<?php wp_head(); ?>
 	</head>
 	<body>
@@ -12,7 +20,7 @@
 				<div id="site-brand">
 					<a href="<?php echo home_url(); ?>">
 						<span id="site-logo">
-							<i class="fas fa-laptop"></i>
+							<img src="<?php echo get_theme_mod('site_logo'); ?>">
 						</span>
 						<span id="site-title">
 							<?php echo bloginfo( 'name' ); ?>

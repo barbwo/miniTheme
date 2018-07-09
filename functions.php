@@ -51,4 +51,6 @@
 	}
 	add_action( 'widgets_init', 'sidebar_and_widget_init' );
 
-	add_theme_support( 'post-thumbnails' ); 
+	add_theme_support( 'post-thumbnails' );
+
+	include('customizer.php');
