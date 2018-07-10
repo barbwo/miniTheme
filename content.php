@@ -5,22 +5,26 @@
 	</h1>
 			<p class="entry-meta">
 				<?php 
-					if( get_theme_mod( 'post_index_date', true ) ):
+					$date = get_theme_mod( 'post_index_date', true );
+					$comments = get_theme_mod( 'post_index_comments_number', false ) && comments_open();
+					$author = get_theme_mod( 'post_index_author', true );
+					$category = get_theme_mod( 'post_index_category', true );
+					if( $date ):
 						the_time('d.m.Y');
 					endif;
-					if( get_theme_mod( 'post_index_date', true ) && get_theme_mod( 'post_index_comments_number', true ) ):
+					if( $date && $comments ):
 						echo ' | ';
 					endif;
-					if( get_theme_mod( 'post_index_comments_number', false ) ) :
+					if( $comments ) :
 						comments_number( '0 komentarzy', '1 komentarz', '% komentarzy'); 
 					endif;
-					if( (get_theme_mod( 'post_index_date', true ) || get_theme_mod( 'post_index_comments_number', true )) && get_theme_mod( 'post_index_author', true ) ):
+					if( ($date || $comments) && $author ):
 						echo ' | ';
 					endif;
-					if( get_theme_mod( 'post_index_author', true ) ):
+					if( $author ):
 							the_author();
 						endif;
-					if( get_theme_mod( 'post_index_category', true ) ):
+					if( $category ):
 				?>
 					<div id="entry-categories"><?php the_category(' '); ?></div>
 				<?php

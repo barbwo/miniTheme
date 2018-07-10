@@ -7,16 +7,20 @@
 				</h1>
 				<p class="entry-meta">
 					<?php 
-						if( get_theme_mod( 'post_single_date', true ) ):
+						$date = get_theme_mod( 'post_single_date', true );
+						$comments = get_theme_mod( 'post_single_comments_number', true ) && comments_open();
+						$category = get_theme_mod( 'post_single_category', true );
+						$author = get_theme_mod( 'post_single_author', true );
+						if( $date ):
 							the_time('d.m.Y');
 						endif;
-						if( get_theme_mod( 'post_single_date', true ) && get_theme_mod( 'post_single_comments_number', true ) ):
+						if( $date && $comments ):
 							echo ' | ';
 						endif;
-						if( get_theme_mod( 'post_single_comments_number', true ) ) :
+						if( $comments ) :
 							comments_number( '0 komentarzy', '1 komentarz', '% komentarzy'); 
 						endif;
-						if( get_theme_mod( 'post_single_category', true ) ):
+						if( $category ):
 					?>
 						<div id="entry-categories"><?php the_category(' '); ?></div>
 					<?php
@@ -26,7 +30,7 @@
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div>
-				<?php if( get_theme_mod( 'post_single_author', true ) ): ?>
+				<?php if( $author ): ?>
 					<div id="entry-author">
 						<div><?php echo get_avatar(get_the_author_meta('email'), 80); ?></div>
 						<div>

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 	<main>
 		<?php if ( have_posts() ) : ?>
-			<header id="archive-header">
-				<h1 id="archive-title">
+			<header id="template-header">
+				<h1 id="template-title">
 					<?php 
 						if(is_author()): 
 							the_author();
@@ -25,7 +25,7 @@
 				<?php if ( the_archive_description() ) : ?>
 					<p><?php the_archive_description(); ?></p>
 				<?php endif; ?>
-				<h3 id="archive-counter">Znaleziono: 
+				<h3 id="template-counter">Znaleziono: 
 				<?php 
 					$counter = $wp_query->found_posts;
 					if($counter < 5):

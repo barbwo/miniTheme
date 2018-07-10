@@ -178,10 +178,10 @@
 			::selection {
 				background: <?php echo get_theme_mod('selection_color', '#e0ffff'); ?>;
 			}
-			.comment-form input:focus, .comment-form textarea:focus {
+			input:focus, textarea:focus {
 				outline-color: <?php echo get_theme_mod('primary_color', '#00ced1'); ?>;
 			}
-			#entry-categories a:hover, .entry-content a:not(.more-link):hover, .comment-form input[type=submit]:hover, a:hover {
+			#entry-categories a:hover, .entry-content a:not(.more-link):hover, input[type=submit]:hover, a:hover {
 				border-color: <?php echo get_theme_mod('primary_color', '#00ced1'); ?>;
 				color: <?php echo get_theme_mod('primary_color', '#00ced1'); ?>;
 			}

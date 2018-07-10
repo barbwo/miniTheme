@@ -173,20 +173,20 @@ h1, .widget h1 {
 .comment-moderation {
 	color: var(--text-muted-color);
 }
-.comment-form input, .comment-form textarea {
+input, textarea {
 	background-color: white;
 	border: 1px solid var(--border-color);
 	border-radius: 0;
 	padding: 0.2rem;
 	width: 100%;
 }
-.comment-form input:focus, .comment-form textarea:focus {
+input:focus, textarea:focus {
 	outline-color: var(--primary-color);
 }
-.comment-form input[type=submit] {
+input[type=submit] {
 	font-size: 1.25em;
 }
-.comment-form input[type=submit]:hover {
+input[type=submit]:hover {
 	border: 2px solid var(--primary-color);
 	color: var(--primary-color);
 }
@@ -207,11 +207,11 @@ a:hover {
 	align-items: center;
 	border: 1px solid var(--border-color);
 	display: flex;
-	margin: 20px;
-	padding: 20px;
+	margin: 1.25rem;
+	padding: 1.25rem;
 }
 #entry-author img {
-	margin-right: 20px;
+	margin-right: 1.25rem;
 }
 #entry-author h3, #entry-author p {
 	margin-bottom: 0;
@@ -227,21 +227,29 @@ a:hover {
 	border-color: var(--primary-color);
 	color: var(--primary-color);
 }
-#archive-header {
+#template-header, .search-field, .text-center {
 	text-align: center;
 }
 
-#archive-header img {
-	margin-bottom: 20px;
+#template-header img {
+	margin-bottom: 1.25rem;
 }
-#archive-counter{
-	margin-top: 20px;
+#template-counter {
+	margin-top: 1.25rem;
 }
 hr {
 	border: 0;
 	height: 1px;
-	margin: 20px 0;
+	margin: 1.25rem 0;
 	background: var(--border-color);
+}
+#error-icon {
+	display: block;
+	font-size: 3rem;
+	margin: 2rem 0;"
+}
+#searchform input {
+	margin: 0.5rem 0 ;
 }
 @media only screen and (max-width: 48rem) {
 	.container {
@@ -286,7 +294,7 @@ hr {
 		flex-direction: column;
 	}
 	#entry-author img {
-		margin: 0 0 20px 0;
+		margin: 0 0 1.25rem 0;
 	}
 	#entry-author h3 {
 		text-align: center;
